@@ -115,7 +115,7 @@ def run(opts):
 
     # Start the actual training loop
     #val_dataset = problem.make_dataset(n_users=opts.n_users, n_facilities=opts.n_facilities, num_samples=opts.val_size,
-    #                                   filename='./data/MCLP_1000_20/MCLP_1000_20_valid_Normalization.pkl', p=opts.p,
+    #                                   filename='./data/mclp_1000_100_20_random_train.pkl', p=opts.p,
     #                                   r=opts.r, distribution=opts.data_distribution)
     val_dataset = problem.make_dataset(n_users=opts.n_users, n_facilities=opts.n_facilities, num_samples=opts.val_size, 
                                        p=opts.p, r=opts.r, distribution=opts.data_distribution)
@@ -126,6 +126,7 @@ def run(opts):
         torch.set_rng_state(load_data['rng_state'])
         if opts.use_cuda:
             torch.cuda.set_rng_state_all(load_data['cuda_rng_state'])
+
         # Set the random states
         # Dumping of state was done before epoch callback, so do that now (model is loaded)
         baseline.epoch_callback(model, epoch_resume)

@@ -166,7 +166,7 @@ class RolloutBaseline(Baseline):
         if dataset is None:
             #self.dataset = self.problem.make_dataset(
             #    n_users=self.opts.n_users, n_facilities=self.opts.n_facilities, num_samples=self.opts.val_size,
-            #    filename='./data/MCLP_origin/MCLP_200_100_25.pkl',
+            #    filename='./data/mclp_1000_100_20_random_train.pkl',
             #    p=self.opts.p, r=self.opts.r, distribution=self.opts.data_distribution)
             self.dataset = self.problem.make_dataset(
                 n_users=self.opts.n_users, n_facilities=self.opts.n_facilities, num_samples=self.opts.val_size,
